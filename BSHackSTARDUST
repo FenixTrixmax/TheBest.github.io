@@ -1,0 +1,733 @@
+function onCreate()
+gg.clearResults(true)
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber('h FF C3 02 D1 E8 2B 00 FD FB 6B 06 A9 F9 63 07 A9 F7 5B 08 A9 F5 53 09 A9 F3 7B 0A A9', gg.TYPE_BYTE)
+gg.getResults(1000)
+gg.editAll('h C0 03 5F D6', gg.TYPE_BYTE)
+gg.clearResults(true)
+gg.toast('🔰Script by STARDUST🔰')
+gg.sleep(100)
+gg.alert("🔰Script by STARDUST🔰\n------------------------------------\n🔴 BETA SCRIPT🔴\n------------------------------------\n⚠️ INFORMATION:⚠️\n Скрипт может иметь баги, по скольку это бета.\n\n Channel: \n Telegram: @STARDUST_IO ","ОК")
+
+
+
+ OnOff = true
+
+ end 
+
+OnOff = false
+
+on = '【On】'
+off = '【Off】'
+
+gm = off
+clmb = off
+mgclmb = off
+invsb = off
+flair = off
+shakjum = off
+cam = off
+blchm = off
+grnchm = off
+cmt = off
+jumph = off
+gravityh = off
+freair = off
+deadh = off
+longjh = off
+wallshoth = off
+speedh = off
+
+function Main()
+
+if OnOff == false then
+
+onCreate()
+else
+end
+
+menu = gg.choice({
+'Game [Menu]',
+'Parametrs [Menu]',
+'Chams [Menu]',
+'Authors',
+'Exit'
+},nil, '🔰Script by STARDUST🔰 v1〔Block Strike 7.8.5〕')
+if menu == nil then else
+if menu == 1 then Game() end
+if menu == 2 then Visuals() end
+if menu == 3 then ChamsMenu() end
+if menu == 4 then IAuthor() end
+if menu == 5 then gg.alert("Спасибо что пользуетесь скриптом. Удачной игры.") print('Вы завершили скрипт, удачной игры!') gg.toast("🔰Script by STARDUST🔰")
+os.exit() end end end
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+function Game()
+play = gg.multiChoice({
+'GodMode' .. gm,
+'Climb Walls' .. clmb,
+'[Mega]Climb Walls' .. mgclmb,
+'Invisible' .. invsb,
+'Fly Air' .. flair,
+'Jump Hack' .. jumph,
+'Gravity' .. gravityh,
+'Freeze In The Air' .. freair,
+'Dead' .. deadh,
+'LongJump' .. longjh,
+'WallShot' .. wallshoth,
+'SpeedHack' .. speedh,
+'Back',
+},nil, '〔Game Menu〕')
+if play == nil then Main() else
+if play[1] == true then God() end
+if play[2] == true then Climb() end
+if play[3] == true then MegaClimb() end
+if play[4] == true then Invisible() end
+if play[5] == true then Fly() end
+if play[6] == true then JumpHack() end
+if play[7] == true then Gravity() end
+if play[8] == true then FreezeAir() end
+if play[9] == true then Dead() end
+if play[10] == true then LongJump() end
+if play[11] == true then WallShot() end
+if play[12] == true then SpeedHack() end
+if play[13] == true then back1() end end end
+
+function Visuals()
+cham = gg.multiChoice({
+'Shaking Jump' .. shakjum,
+'Camera 360' .. cam,
+'NickName',
+'Back',
+},nil, '〔Visuals Menu〕')
+if cham == nil then Main() else
+if cham[1] == true then Shjump() end 
+if cham[2] == true then Camhk() end
+if cham[3] == true then Name() end
+if cham[4] == true then back1() end end end
+
+function ChamsMenu()
+chamsmenu = gg.multiChoice({
+'Material Chams' .. cmt,
+'Blue Chams' .. blchm,
+'Green Chams' .. grnchm,
+'Back',
+
+},nil, '〔Visuals Menu〕')
+if chamsmenu == nil then Main() else
+if chamsmenu[1] == true then ChamsMaterial() end 
+if chamsmenu[2] == true then BlueChams() end 
+if chamsmenu[3] == true then GreenChams() end
+if chamsmenu[4] == true then back1() end end end
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+function God()
+if gm == off then
+gm = on;
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber('h F4 0F 1E F8 F3 7B 01 A9 14 F4 00 B0 33 E7 00 90', gg.TYPE_BYTE) 
+gg.getResults(8)
+gg.editAll('hC0035FD6 F8 F3 7B 01 A9 14 F4 00 B0 33 E7 00 90', gg.TYPE_BYTE)
+gg.clearResults(true)
+gg.toast("🛡️GodMode ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true) 
+else if
+gm == on then
+gm = off; 
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber('hC0035FD6 F8 F3 7B 01 A9 14 F4 00 B0 33 E7 00 90', gg.TYPE_BYTE) 
+gg.getResults(8)
+gg.editAll('h F4 0F 1E F8 F3 7B 01 A9 14 F4 00 B0 33 E7 00 90', gg.TYPE_BYTE)
+gg.clearResults(true)
+gg.toast("🛡️GodMode OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)end end end
+
+function Climb()
+if clmb == off then
+clmb = on;
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber('0.002', gg.TYPE_FLOAT) 
+gg.getResults(200)
+gg.editAll('-0.2007', gg.TYPE_FLOAT)
+gg.toast("🛡️ClimbWalls ON🛡️")
+gg.clearResults(true)
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+clmb == on then
+clmb = off;
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber('-0.2007', gg.TYPE_FLOAT) 
+gg.getResults(200)
+gg.editAll('0.002', gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️ClimbWalls OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+function Shjump()
+if shakjum == off then
+shakjum = on;
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("-1;0;0;1;0;0;0;0;1;0;0;-1::45", gg.TYPE_FLOAT)
+gg.getResults(1000)
+gg.editAll("-1;0;0;1;0;0;0;3;1;0;0;-1", gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Shaking Jump ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+shakjum == on then
+shakjum = off;
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("-1;0;0;1;0;0;0;3;1;0;0;-1", gg.TYPE_FLOAT)
+gg.getResults(1000)
+gg.editAll("1", gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Shaking Jump OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+function Camhk()
+if cam == off then
+cam = on;
+gg.clearResults(true)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
+gg.searchNumber('3.14159274101',gg.TYPE_FLOAT)
+gg.getResults(99999)
+gg.editAll('5',gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Fov Hack ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+cam == on then
+cam = off; 
+gg.clearResults(true)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_DATA | gg.REGION_CODE_APP)
+gg.searchNumber('',gg.TYPE_FLOAT)
+gg.getResults(99999)
+gg.editAll('3.14159274101',gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Fov Hack OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+function ChamsMaterial()
+if cmt == off then
+cmt = on;
+gg.clearResults(true)
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("h 00 00 00 00 01 00 00 00 02 00 00 00 00 00 80 3F 00 00 80 3F",gg.TYPE_BYTE)
+gg.getResults(99999)
+gg.editAll("h 00 00 00 00 01 00 00 00 02 00 00 00 0A D7 23 3C 0A D7 23 3C",gg.TYPE_BYTE)
+gg.clearResults(true)
+gg.toast("🛡️Chams Material ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+cmt == on then
+cmt = off; 
+gg.clearResults(true)
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("h 00 00 00 00 01 00 00 00 02 00 00 00 0A D7 23 3C 0A D7 23 3C",gg.TYPE_BYTE)
+gg.refineNumber("0.01",gg.TYPE_BYTE)
+gg.getResults(99999)
+gg.editAll("h 00 00 00 00 01 00 00 00 02 00 00 00 00 00 80 3F 00 00 80 3F",gg.TYPE_BYTE)
+gg.clearResults(true)
+gg.toast("🛡️Chams Material OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+function Name()
+gg.clearResults()
+gg.setRanges(gg.REGION_ANONYMOUS)
+local nik = gg.prompt({"Enter Your NickName:"},{"Your Name"},{"Text"})
+local nik1 = gg.prompt({"Enter The NickName You Want To Change To:"},{"Your Name"},{"text"})
+local nik2 = ";"..nik[1]
+local nik3 = ";"..nik1[1]
+gg.searchNumber(nik2, gg.TYPE_WORD)
+gg.getResults(999)
+gg.editAll(nik3, gg.TYPE_WORD)
+gg.clearResults(true)
+gg.toast("🛡️Nickname&Clan Hack ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+
+function MegaClimb()
+if mgclmb == off then
+mgclmb = on;
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber('0;0;0;0.70710676908;0.70710676908;0;1;0;0.70710676908;0.07999999821;0.30000001192;0;0;0', gg.TYPE_FLOAT)
+gg.refineNumber("1", gg.TYPE_FLOAT)
+gg.getResults(999)
+gg.editAll('9', gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Mega Climb ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+mgclmb == on then
+mgclmb = off;
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber('9', gg.TYPE_FLOAT)
+gg.getResults(999)
+gg.editAll('1', gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Mega Climb OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+function BlueChams()
+if blchm == off then
+blchm = on;
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber('1073741894', gg.TYPE_DWORD)
+gg.refineNumber('1073741894', gg.TYPE_DWORD)
+gg.refineNumber('1073741894', gg.TYPE_DWORD)
+gg.refineNumber('1073741894', gg.TYPE_DWORD)
+gg.getResults(9000)
+gg.editAll('1073741899', gg.TYPE_DWORD)
+gg.clearResults(true)
+gg.toast("🛡️Blue Chams ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+blchm == on then
+blchm = off;
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber('1073741899', gg.TYPE_DWORD)
+gg.getResults(9000)
+gg.editAll('1073741894', gg.TYPE_DWORD)
+gg.clearResults(true)
+gg.toast("🛡️Blue Chams OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+function GreenChams()
+if grnchm == off then
+grnchm = on;
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("1073741893", gg.TYPE_DWORD)
+gg.refineNumber("1073741893", gg.TYPE_DWORD)
+gg.refineNumber("1073741893", gg.TYPE_DWORD)
+gg.refineNumber("1073741893", gg.TYPE_DWORD)
+gg.getResults(5000)
+gg.editAll('1073741904', gg.TYPE_DWORD)
+gg.clearResults(true)
+gg.toast("🛡️Green Chams ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+grnchm == on then
+grnchm = off;
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("10737419", gg.TYPE_DWORD)
+gg.getResults(5000)
+gg.editAll('1073741893', gg.TYPE_DWORD)
+gg.clearResults(true)
+gg.toast("🛡️Green Chams OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+
+
+function Fly()
+if flair == off then
+flair = on;
+gg.setRanges(gg.REGION_JAVA_HEAP | gg.REGION_C_HEAP | gg.REGION_C_ALLOC | gg.REGION_C_DATA | gg.REGION_C_BSS | gg.REGION_PPSSPP | gg.REGION_ANONYMOUS)
+gg.searchNumber('0.74',gg.TYPE_FLOAT)
+gg.getResults(99999)
+gg.editAll('1',gg.TYPE_FLOAT)
+gg.editAll('2',gg.TYPE_FLOAT)
+gg.editAll('3',gg.TYPE_FLOAT)
+gg.editAll('4',gg.TYPE_FLOAT)
+gg.editAll('5',gg.TYPE_FLOAT)
+gg.editAll('6',gg.TYPE_FLOAT)
+gg.editAll('7',gg.TYPE_FLOAT)
+gg.editAll('8',gg.TYPE_FLOAT)
+gg.editAll('9',gg.TYPE_FLOAT)
+gg.editAll('10.0123456789',gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Fly Air ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+flair == on then
+flair = off;
+gg.searchNumber('10.0123456789',gg.TYPE_FLOAT)
+gg.getResults(99999)
+gg.editAll('9',gg.TYPE_FLOAT)
+gg.editAll('8',gg.TYPE_FLOAT)
+gg.editAll('7',gg.TYPE_FLOAT)
+gg.editAll('6',gg.TYPE_FLOAT)
+gg.editAll('5',gg.TYPE_FLOAT)
+gg.editAll('4',gg.TYPE_FLOAT)
+gg.editAll('3',gg.TYPE_FLOAT)
+gg.editAll('2',gg.TYPE_FLOAT)
+gg.editAll('1',gg.TYPE_FLOAT)
+
+gg.editAll('0.74',gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Fly Air OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+function Invisible()
+if invsb == off then
+invsb = on;
+gg.setRanges(gg.REGION_CODE_APP | gg.REGION_C_ALLOC | gg.REGION_ANONYMOUS)
+gg.searchNumber('0.14177720249',gg.TYPE_FLOAT)
+gg.getResults(120000)
+gg.editAll('0.2417772',gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.searchNumber('0.2417772',gg.TYPE_FLOAT)
+gg.getResults(120000)
+gg.editAll('0.14177720249',gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Invisible ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+invsb == on then
+invsb = off;
+gg.setRanges(gg.REGION_CODE_APP | gg.REGION_C_ALLOC | gg.REGION_ANONYMOUS)
+gg.searchNumber('0.14177720249',gg.TYPE_FLOAT)
+gg.getResults(120000)
+gg.editAll('0.2417772',gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.searchNumber('0.2417772',gg.TYPE_FLOAT)
+gg.getResults(120000)
+gg.editAll('0.14177720249',gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Invisible OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+
+function JumpHack()
+if jumph == off then
+jumph = on;
+gg.setRanges(gg.REGION_CODE_APP | gg.REGION_C_ALLOC | gg.REGION_ANONYMOUS)
+gg.searchNumber("0.15X4", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.getResults(120000)
+gg.editAll("1X4", gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️JumpHack ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+jumph == on then
+jumph = off;
+gg.setRanges(gg.REGION_CODE_APP | gg.REGION_C_ALLOC | gg.REGION_ANONYMOUS)
+gg.searchNumber("1X4", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.getResults(120000)
+gg.editAll("0.15X4", gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️JumpHack OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+
+function Gravity()
+if gravityh == off then
+gravityh = on;
+gg.setRanges(gg.REGION_CODE_APP | gg.REGION_C_ALLOC | gg.REGION_ANONYMOUS)
+gg.searchNumber("0.2X4", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.getResults(120000)
+gg.editAll("0.001X4", gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Gravity ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+gravityh == on then
+gravityh = off;
+gg.setRanges(gg.REGION_CODE_APP | gg.REGION_C_ALLOC | gg.REGION_ANONYMOUS)
+gg.searchNumber("0.001X4", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.getResults(120000)
+gg.editAll("0.2X4", gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Gravity OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+
+function FreezeAir()
+if freair == off then
+freair = on;
+gg.setRanges(gg.REGION_ANONYMOUS)
+      gg.clearResults(true)
+      gg.searchNumber('h6F006100740030005F0030003000320000000000',gg.TYPE_BYTE) 
+      gg.getResults(9999)
+      gg.editAll("h6F006100740030005F003000B57D420000000000",gg.TYPE_BYTE)
+gg.clearResults(true)
+gg.toast("🛡️Freeze in the air ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+freair == on then
+freair = off;
+gg.setRanges(gg.REGION_ANONYMOUS)
+      gg.clearResults(true)
+      gg.searchNumber('4357557',gg.TYPE_DWORD) 
+      gg.getResults(9999)
+      gg.editAll("3276848",gg.TYPE_DWORD)
+gg.clearResults(true)
+gg.toast("🛡️Freeze in the air OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+
+
+function Dead()
+if deadh == off then
+deadh = on;
+gg.setRanges(gg.REGION_CODE_APP)
+      gg.searchNumber('-0.0001', gg.TYPE_FLOAT)
+gg.getResults(200)
+      gg.editAll('9999999', gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Dead ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+deadh == on then
+deadh = off;
+gg.setRanges(gg.REGION_CODE_APP)
+      gg.searchNumber('9999999', gg.TYPE_FLOAT)
+      gg.getResults(200)
+      gg.editAll('-0.0001', gg.TYPE_FLOAT)
+gg.clearResults(true)
+gg.toast("🛡️Dead OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+
+
+function LongJump()
+if longjh == off then
+longjh = on;
+gg.setRanges(gg.REGION_ANONYMOUS) 
+gg.searchNumber("0.375;0.74::5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.refineNumber("0.74", gg.TYPE_FLOAT) 
+local t = gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.addListItems(t) t = nil local copy = false 
+local t = gg.getListItems() 
+if not copy 
+then gg.removeListItems(t) end 
+for i, v in ipairs(t) do
+ if gg.getTargetInfo().x64
+ then v.address = v.address + 0xffffffffffffffb4 else v.address = v.address + -56 end
+ if copy then v.name = v.name..' #2' end end
+gg.addListItems(t) t = nil copy = nil local 
+t = gg.getListItems() for i, v in ipairs(t) do if v.flags == gg.TYPE_FLOAT then 
+v.value = "0.2" 
+v.freeze = true 
+v.freezeType = gg.FREEZE_NORMAL
+end end 
+gg.addListItems(t) 
+t = nil
+gg.clearResults(true)
+gg.toast("🛡️LongJump ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+longjh == on then
+longjh = off;
+gg.setRanges(gg.REGION_ANONYMOUS) 
+gg.searchNumber("0.375;0.74::5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.refineNumber("0.74", gg.TYPE_FLOAT) 
+local t = gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.addListItems(t) t = nil local copy = false 
+local t = gg.getListItems() 
+if not copy 
+then gg.removeListItems(t) end 
+for i, v in ipairs(t) do
+ if gg.getTargetInfo().x64
+ then v.address = v.address + 0xffffffffffffffb4 else v.address = v.address + -56 end
+ if copy then v.name = v.name..' #2' end end
+gg.addListItems(t) t = nil copy = nil local 
+t = gg.getListItems() for i, v in ipairs(t) do if v.flags == gg.TYPE_FLOAT then 
+v.value = "0.2" 
+v.freeze = false 
+end end 
+gg.addListItems(t) 
+t = nil
+gg.clearResults(true)
+gg.toast("🛡️LongJump OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+
+
+function WallShot()
+if wallshoth == off then
+wallshoth = on;
+gg.setRanges(gg.REGION_ANONYMOUS)
+      gg.searchNumber('h FB FF 5F 3F', gg.TYPE_BYTE)
+      gg.getResults(229)      
+      gg.editAll('h 7A 01 01 01', gg.TYPE_BYTE)
+gg.clearResults(true)
+gg.toast("🛡️WallShot ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+wallshoth == on then
+wallshoth = off;
+gg.setRanges(gg.REGION_ANONYMOUS)
+      gg.searchNumber('h 7A 01 01 01', gg.TYPE_BYTE)
+      gg.getResults(229)      
+      gg.editAll('h FB FF 5F 3F', gg.TYPE_BYTE)
+gg.clearResults(true)
+gg.toast("🛡️WallShot OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+
+
+function SpeedHack()
+if speedh == off then
+speedh = on;
+gg.setRanges(gg.REGION_ANONYMOUS) 
+gg.searchNumber("h0300000030002E00", gg.TYPE_BYTE, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.getResults(9999)
+gg.editAll("h0300000030002E003200000000000000",gg.TYPE_BYTE)
+gg.clearResults(true)
+gg.toast("🛡️SpeedHack ON🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+else if
+speedh == on then
+speedh = off;
+gg.setRanges(gg.REGION_ANONYMOUS) 
+gg.searchNumber("h0300000030002E003200000000000000", gg.TYPE_BYTE, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.getResults(9999)
+gg.editAll("h0300000030002E00",gg.TYPE_BYTE)
+gg.clearResults(true)
+gg.toast("🛡️SpeedHack OFF🛡️")
+gg.sleep(1000)
+gg.toast("【🔰Script by STARDUST🔰】")
+gg.clearResults(true)
+end
+end
+end
+
+
+
+
+
+function IAuthor()
+gg.alert('BlockStrike 7.8.5\nBeta Script [V1.0]\n\nAuthors: STARDUST\n\nTelegram: STARDUST_IO')
+end
+
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+function back1()
+gg.setVisible(false)
+gg.setVisible(true)
+end
+
+while(true)
+do
+menuend = 0
+if gg.isVisible(true) then gg.setVisible(false)
+menuend = 1 end
+if menuend == 1 then Main() end end
